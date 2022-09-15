@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+
+  ldapserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 389:389
+    environment:
+      HOSTNAME: "ufca"
+      DOMINIO_INST: "ufca.edu.br"
+      SENHA_ADMIN: adminpass
+      SENHA_LEITOR_SHIB: shibpass
+      DEBUG_LEVEL: "1024"
